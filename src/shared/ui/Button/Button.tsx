@@ -15,6 +15,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     backgroundColor?: string;
     color?: string;
     size?: ButtonSize;
+    square?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
@@ -24,7 +25,9 @@ const Button = (props: ButtonProps) => {
         className,
         backgroundColor,
         color,
-        size} = props;
+        size,
+        square
+    } = props;
 
     const style = {
         backgroundColor,
@@ -35,7 +38,7 @@ const Button = (props: ButtonProps) => {
         <button
             {...props}
             type="button"
-            className={classNames(styles.btn, className, {[styles[size!]]: size})}
+            className={classNames(styles.btn, className, {[styles[size!]]: size}, square ? styles.square : '')}
             style={style}
         >
             {children}

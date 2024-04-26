@@ -1,0 +1,9 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 12px;
+
+    background: linear-gradient(180deg, #4568DC, #B06AB3 100%);
+}

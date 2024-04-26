@@ -8,3 +8,9 @@
     border-radius: 2rem;
     border: 1px lightgray solid;
 }
+
+.square {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0;
+}
