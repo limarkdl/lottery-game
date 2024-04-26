@@ -1,0 +1,10 @@
+.btn {
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    width: fit-content;
+    border-radius: 2rem;
+    border: 1px lightgray solid;
+}
