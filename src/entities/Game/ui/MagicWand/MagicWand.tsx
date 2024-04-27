@@ -4,7 +4,9 @@ import Button, {ButtonTheme} from "@/shared/ui/Button/Button.tsx";
 interface MagicWandProps {
     callback: () => void;
 }
-
+/**
+ * Компонент волшебной палочки, переиспользуемый благодаря колбэку.
+ */
 const MagicWand = (props: MagicWandProps) => {
     const {callback} = props;
 

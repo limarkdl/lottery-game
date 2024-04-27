@@ -33,6 +33,11 @@ export const processTicket = async (ticket: Game8from19TicketDTO, returnResultCa
     }
 };
 
+/**
+ * Функция для валидации билета игры 8 из 19.
+ * @param {Game8from19TicketDTO} ticket - Билет игры 8 из 19 (облегченный) для валидации.
+ * @returns {boolean} Результат валидации: true, если билет валиден, false в обратном.
+ */
 const validateTicket = (ticket: Game8from19TicketDTO): boolean => {
     return ticket.selectedNumbers.firstField.length === 8 && ticket.selectedNumbers.secondField.length === 1;
 };

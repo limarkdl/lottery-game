@@ -9,6 +9,10 @@ import WinOrLostOrError from "@/entities/Game/ui/WinOrLostOrError/WinOrLostOrErr
 import Loader from "@/shared/ui/Loader/Loader.tsx";
 import generateRandomNumbers from "@/shared/lib/randomizer.ts";
 
+
+/**
+ * Компонент карточки билета для игры 8 из 19. Полноценная игра.
+ */
 const Game8From19TicketCard = () => {
 
 

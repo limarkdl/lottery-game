@@ -1,11 +1,24 @@
 import styles from './WinOrLostOrError.module.css';
 import Button from "@/shared/ui/Button/Button.tsx";
 
+
+/**
+ * Пропсы компонента WinOrLostOrError.
+ * @property {'won' | 'lost' | 'error'} result - Результат: выигрыш, проигрыш или ошибка.
+ * @property {Function} [callback] - Функция обратного вызова.
+ *
+ * @interface
+ */
 interface ResultWinOrLostProps {
     result: 'won' | 'lost' | 'error';
     callback?: () => void;
 }
 
+
+/**
+ * Компонент для отображения результата в карточке: выигрыш, проигрыш или ошибка.
+ * @param {ResultWinOrLostProps} props - Пропсы компонента WinOrLostOrError.
+ */
 const WinOrLostOrError = (props: ResultWinOrLostProps) => {
     const {result, callback} = props;
 

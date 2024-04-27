@@ -13,6 +13,16 @@ export enum ButtonTheme {
     clear= 'clear'
 }
 
+/**
+ * Пропсы кнопки.
+ * @property {string} [className] - Класс кнопки.
+ * @property {string} [backgroundColor] - Цвет фона кнопки.
+ * @property {string} [color] - Цвет текста кнопки.
+ * @property {ButtonSize} [size] - Размер кнопки. [S - маленький, M - средний, L - большой, XL - очень большой]
+ * @property {boolean} [square] - Флаг квадратной формы кнопки.
+ * @property {boolean} [disabled] - Флаг, указывающий, отключена ли кнопка.
+ * @property {ButtonTheme} [theme] - Тема кнопки. [clear - прозрачная]
+ */
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     backgroundColor?: string;
@@ -23,6 +33,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ButtonTheme;
 }
 
+/**
+ * Компонент кастомной кнопки.
+ * @param {ButtonProps} props - Свойства кнопки.
+ */
 const Button = (props: ButtonProps) => {
 
     const {
