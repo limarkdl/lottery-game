@@ -20,7 +20,6 @@ export const processTicket = async (ticket: Game8from19TicketDTO, returnResultCa
 
     try {
         await SubmitGame8From19Ticket(markedTicked).then((result) => {
-            console.log('Ticket submission successful:', result);
             if (markedTicked.isTicketWon) {
                 returnResultCallBack('won')
             } else {

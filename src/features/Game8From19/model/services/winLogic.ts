@@ -13,10 +13,11 @@ export const markTicketIfWon = (userTicket: Game8from19TicketDTO): Game8from19Ti
 };
 
 export const generateWinningNumbers = (): Game8from19TicketDTO => {
+
     return {
         selectedNumbers: {
-            firstField: generateRandomNumbers(19, 8, true),
-            secondField: generateRandomNumbers(2, 1, true)
+            firstField: generateRandomNumbers(18, 8, true).map(a => a + 1),
+            secondField: generateRandomNumbers(1, 1, true).map(a => a + 1)
         }
     };
 };

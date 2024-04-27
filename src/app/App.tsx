@@ -11,13 +11,11 @@ function App() {
 
       };
 
-    console.log(import.meta.env.VITE_API_URL);
 
       return (
           <div className='app'>
               {addedTickets.map((card) => card)}
                 <Button
-
                     size={ButtonSize.XL}
                     square
                     onClick={addTicketCard}

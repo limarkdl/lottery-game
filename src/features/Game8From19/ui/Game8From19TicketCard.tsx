@@ -22,11 +22,6 @@ const Game8From19TicketCard = () => {
 
     const ticketRef = useRef(NewTicket);
 
-    useEffect(() => {
-        console.log(ticketStatus);
-    }, [ticketStatus]);
-
-
     const updateReadyToSubmit = (selectedNumbersField1: number[], selectedNumbersField2: number[]) => {
         if (selectedNumbersField1.length === 8 && selectedNumbersField2.length === 1) {
             setIsReadyToSubmit(true);
