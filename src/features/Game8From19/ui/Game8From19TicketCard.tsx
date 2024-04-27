@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from 'react';
+import {useRef, useState} from 'react';
 import NumberField from "@/entities/Game/ui/NumberField";
 import TicketCard from "@/entities/Game/ui/TicketCard";
 
