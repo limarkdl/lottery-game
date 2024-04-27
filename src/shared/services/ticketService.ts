@@ -7,7 +7,6 @@
  * @returns Возвращает обработанный json. В нашем случае ничего.
  */
 
-// TODO: 'Take endpoint from env variables'
 // eslint-disable-next-line
 export const submitTicketToServer = async (ticketData: object, retryCount: number = 3): Promise<any> => {
     const API_URL = import.meta.env.VITE_API_URL || '/finch-test';
