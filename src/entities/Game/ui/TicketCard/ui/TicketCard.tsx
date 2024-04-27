@@ -1,11 +1,13 @@
 import styles from './TicketCard.module.css';
-import Button from "@/shared/ui/Button/Button.tsx";
+import Button, {ButtonSize} from "@/shared/ui/Button/Button.tsx";
 import {ReactNode} from "react";
 
 interface TicketCardProps {
-    ticketNum: number;
-    children: ReactNode[];
+    ticketNum: string;
+    children: ReactNode;
     onSubmit: () => void;
+    readyToSubmit: boolean;
+    buttonToSubmitShown?: boolean;
 
     cornerElement?: ReactNode;
 }
@@ -16,14 +18,27 @@ const TicketCard = (props: TicketCardProps) => {
         ticketNum,
         children,
         onSubmit,
-        cornerElement
+        cornerElement,
+        readyToSubmit,
+        buttonToSubmitShown
     } = props;
 
     return (
         <div className={styles.Container}>
             <div className={styles.HeaderContainer}>Билет {ticketNum} {cornerElement}</div>
+            <div className={styles.Content}>
             {children}
-            <Button onClick={onSubmit}>Показать результат</Button>
+            {
+                buttonToSubmitShown && (<Button
+                    size={ButtonSize.XL}
+                    onClick={onSubmit}
+                    className={styles.SubmitButton}
+                    disabled={!readyToSubmit}
+                >
+                    Показать результат
+                </Button>)
+            }
+            </div>
         </div>
     );
 };

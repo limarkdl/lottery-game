@@ -13,4 +13,27 @@
     width: 2rem;
     height: 2rem;
     border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear {
+    background: transparent !important;
+    border: none !important;
+}
+
+.size-m {
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.size-l {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.size-xl {
+    font-size: 1rem;
+    line-height: 2rem;
 }

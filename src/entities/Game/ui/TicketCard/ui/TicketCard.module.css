@@ -4,12 +4,23 @@
     border-radius: 4px;
     background: #FFFFFF;
     max-width: 540px;
-
+    width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.Content {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .HeaderContainer {
     display: flex;
     justify-content: space-between;
+}
+
+.SubmitButton {
+    margin: 0 auto 0 auto;
 }

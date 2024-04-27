@@ -1,1 +1,1 @@
-export type { IGameState, IGameTicket } from "@/entities/Game/model";
+export type { IGameTicket } from "@/entities/Game/model";
