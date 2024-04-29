@@ -3,6 +3,7 @@
  *
  * @param userNumbers[] Массив чисел пользователя.
  * @param winningNumbers[] Массив выигрышной комбинации.
+ *
  * @returns Количество чисел, которые пользователь имеет общими с выигрышной комбинацией.
  */
 export const countMatches = (userNumbers: number[], winningNumbers: number[]): number => {

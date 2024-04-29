@@ -2,19 +2,20 @@ import styles from './Button.module.css';
 import { ButtonHTMLAttributes } from "react";
 import classNames from "classnames";
 
-export enum ButtonSize {
+enum ButtonSize {
     S = 'size_s',
     M = 'size_m',
     L = 'size_l',
     XL = 'size_xl',
 }
 
-export enum ButtonTheme {
+enum ButtonTheme {
     clear= 'clear'
 }
 
 /**
  * Пропсы кнопки.
+ *
  * @property {string} [className] - Класс кнопки.
  * @property {string} [backgroundColor] - Цвет фона кнопки.
  * @property {string} [color] - Цвет текста кнопки.
@@ -35,6 +36,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 /**
  * Компонент кастомной кнопки.
+ *
  * @param {ButtonProps} props - Свойства кнопки.
  */
 const Button = (props: ButtonProps) => {
@@ -76,3 +78,4 @@ const Button = (props: ButtonProps) => {
 };
 
 export default Button;
+export {ButtonSize, ButtonTheme}

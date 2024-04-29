@@ -9,9 +9,13 @@ import {markTicketIfWon} from "@/features/Game8From19/model/services/winLogic.ts
  *
  * @param ticket Объект с данными которые будут отправлены.
  * @param returnResultCallBack Колбэк передаваемый для получения статуса выигрыша.
+ *
  * @returns Возвращает Promise<void> который никак не обрабатывается.
  */
-export const processTicket = async (ticket: Game8from19TicketDTO, returnResultCallBack: (result: 'won' | 'lost' | 'error') => void) => {
+
+async function processTicket(ticket: Game8from19TicketDTO, returnResultCallBack:
+    (result: 'won' | 'lost' | 'error') => void)  {
+
     if (!validateTicket(ticket)) {
         console.error("Invalid ticket data.");
     }
@@ -31,7 +35,7 @@ export const processTicket = async (ticket: Game8from19TicketDTO, returnResultCa
     } catch (error) {
         throw new Error('Failed to submit ticket');
     }
-};
+}
 
 /**
  * Функция для валидации билета игры 8 из 19.
@@ -42,4 +46,4 @@ const validateTicket = (ticket: Game8from19TicketDTO): boolean => {
     return ticket.selectedNumbers.firstField.length === 8 && ticket.selectedNumbers.secondField.length === 1;
 };
 
-
+export default processTicket;

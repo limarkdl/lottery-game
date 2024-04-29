@@ -5,7 +5,8 @@
 * */
 export interface IGameTicket {
     /**
-     * Уникальный идентификатор билета.
+     * Уникальный айди билета.
+     *
      * @type {string}
      */
     ticketId: string;
