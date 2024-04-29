@@ -4,14 +4,13 @@ import Button from "@/shared/ui/Button/Button.tsx";
 
 /**
  * Пропсы компонента NumberField.
+ *
  * @property {number} fieldNum - Номер поля.
  * @property {string} description - Описание поля.
  * @property {number} numOfNums - Общее количество чисел.
  * @property {number} maxToSelect - Максимальное количество чисел для выбора.
  * @property {number[]} selectedCells - Массив выбранных чисел.
  * @property {(newSelectedCells: number[]) => void} onSelectionChange - Функция обратного вызова при изменении выбранных чисел.
- *
- * @interface
  */
 interface NumberFieldProps {
     fieldNum: number;

@@ -4,14 +4,13 @@ import {ReactNode} from "react";
 
 /**
  * Пропсы компонента TicketCard.
+ *
  * @property {string} ticketNum - Номер билета.
  * @property {ReactNode} children - Дочерние элементы карточки билета.
  * @property {Function} onSubmit - Функция обработки события отправки билета.
  * @property {boolean} readyToSubmit - Флаг готовности к отправке билета.
  * @property {boolean} [buttonToSubmitShown] - Флаг отображения кнопки для отправки билета.
  * @property {ReactNode} [cornerElement] - Дополнительный элемент угла карточки билета.
- *
- * @interface
  */
 interface TicketCardProps {
     ticketNum: string;

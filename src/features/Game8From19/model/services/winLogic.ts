@@ -22,7 +22,6 @@ export const markTicketIfWon = (userTicket: Game8from19TicketDTO): Game8from19Ti
  * @returns {Game8from19TicketDTO} Выигрышные числа для игры 8 из 19.
  */
 export const generateWinningNumbers = (): Game8from19TicketDTO => {
-
     return {
         selectedNumbers: {
             firstField: generateRandomNumbers(18, 8, true).map(a => a + 1),
@@ -38,12 +37,16 @@ export const generateWinningNumbers = (): Game8from19TicketDTO => {
  * @returns {boolean} Результат проверки: true, если пользователь выиграл, false в противном случае.
  */
 const checkIfTicketWon = (userTicket: Game8from19TicketDTO, winningTicket: Game8from19TicketDTO): boolean => {
-    const matchesFirstField = countMatches(userTicket.selectedNumbers.firstField, winningTicket.selectedNumbers.firstField);
-    const matchesSecondField = countMatches(userTicket.selectedNumbers.secondField, winningTicket.selectedNumbers.secondField);
+    const matchesFirstField = countMatches(
+        userTicket.selectedNumbers.firstField, winningTicket.selectedNumbers.firstField
+    );
+    const matchesSecondField = countMatches(
+        userTicket.selectedNumbers.secondField, winningTicket.selectedNumbers.secondField
+    );
 
-    const conditionOne = matchesFirstField >= 4;
+    const winningCondition1 = matchesFirstField >= 4;
 
-    const conditionTwo = matchesFirstField >= 3 && matchesSecondField == 1;
+    const winningCondition2 = matchesFirstField >= 3 && matchesSecondField === 1;
 
-    return conditionOne || conditionTwo;
+    return winningCondition1 || winningCondition2;
 };

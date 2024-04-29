@@ -1,30 +1,22 @@
-import {useRef, useState} from 'react';
-import NumberField from "@/entities/Game/ui/NumberField";
-import TicketCard from "@/entities/Game/ui/TicketCard";
-
-import MagicWand from "@/entities/Game/ui/MagicWand/MagicWand.tsx";
-import {processTicket} from "@/features/Game8From19/model/services/processTicket.ts";
-import {Game8from19Ticket} from "@/features/Game8From19";
-import WinOrLostOrError from "@/entities/Game/ui/WinOrLostOrError/WinOrLostOrError.tsx";
-import Loader from "@/shared/ui/Loader/Loader.tsx";
+import { useRef, useState } from 'react';
+import { WinOrLostOrError, TicketCard, NumberField, MagicWand } from "@/entities/Game";
+import { Game8from19Ticket } from "../model/types/Game8From19.ts";
+import processTicket from "../model/services/processTicket.ts";
 import generateRandomNumbers from "@/shared/lib/randomizer.ts";
+import Loader from "@/shared/ui/Loader/Loader.tsx";
 
 
 /**
  * Компонент карточки билета для игры 8 из 19. Полноценная игра.
  */
 const Game8From19TicketCard = () => {
-
-
     const [selectedNumbersField1, setSelectedNumbersField1] = useState<number[]>([]);
     const [selectedNumbersField2, setSelectedNumbersField2] = useState<number[]>([]);
     const [isReadyToSubmit, setIsReadyToSubmit] = useState<boolean>(false);
     const [ticketStatus, setTicketStatus] = useState<'active' | 'pending' | 'completed' | 'error'>('active');
-    const NewTicket = new Game8from19Ticket(`${Date.now()}`, { firstField: [], secondField: [] })
-
     const [ticketResult, setTicketResult] = useState<null | 'won' | 'lost' | 'error'>(null);
 
-    const ticketRef = useRef(NewTicket);
+    const ticketRef = useRef(new Game8from19Ticket(`${Date.now()}`, { firstField: [], secondField: [] }));
 
     const updateReadyToSubmit = (selectedNumbersField1: number[], selectedNumbersField2: number[]) => {
         if (selectedNumbersField1.length === 8 && selectedNumbersField2.length === 1) {
@@ -112,7 +104,7 @@ const Game8From19TicketCard = () => {
         <TicketCard
             ticketNum={ticketRef.current.ticketId}
             onSubmit={onSubmitGame8From19}
-            cornerElement={ticketStatus === 'active' ? <MagicWand callback={MagicWandFunctionality}/> : <></>}
+            cornerElement={ticketStatus === 'active' ? <MagicWand callback={MagicWandFunctionality}/> : ''}
             readyToSubmit={isReadyToSubmit}
             buttonToSubmitShown={ticketStatus === 'active'}
         >
