@@ -45,8 +45,6 @@
     "vite-plugin-babel": "^1.2.0"
   },
   "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "not dead"
+    "defaults and fully supports es6-module"
   ]
 }
